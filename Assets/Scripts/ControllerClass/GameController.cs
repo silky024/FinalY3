@@ -9,8 +9,8 @@ using Mono.Data.Sqlite;
 
 
 public class GameController : MonoBehaviour
-{
-   /* public void OpenLootbox()
+{/*
+    public void OpenLootbox()
     {
         
         character.Add(new Card("Rapi",1));
@@ -52,5 +52,6 @@ public class GameController : MonoBehaviour
     void Start()
     {
         onLoadfromDatabase();
-    }*/
+    }
+    */
 }
