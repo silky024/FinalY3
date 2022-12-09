@@ -1,0 +1,132 @@
+CREATE TABLE player (
+	player_id INTEGER ,
+	username VARCHAR(50) NOT NULL UNIQUE ,
+	
+	silver INTEGER DEFAULT 0,
+	gold INTEGER DEFAULT 0,
+	diamond INTEGER DEFAULT 0,
+	
+	PRIMARY KEY (player_id )
+);
+/*------------------------------------------------*/
+CREATE TABLE gun_type (
+	guntype_id INTEGER,
+	name TEXT NOT NULL,
+	reload INTEGER,
+	
+	PRIMARY KEY (guntype_id )
+);
+INSERT INTO gun_type (name, reload ) VALUES
+('Sniper Rifle', 2.5 ),
+('Assault Rifle', 1.5 ),
+('Rocket Launcher', 3 ),
+('Shotgun', 2 ),
+('SMG', 1);
+/*--------------------------------------------------------*/
+
+CREATE TABLE item(
+	item_id INTEGER,
+	name TEXT NOT NULL,
+	
+	PRIMARY KEY (item_id )
+
+);
+INSERT INTO item (item_id, name ) VALUES
+(1,'Lootbox'),(2,'FlashdriveX100'),(3,'Pack SilverX200'),(4,'Pack GoldX20');
+
+/*---------------------------------------------*/
+CREATE TABLE card (
+	card_id INTEGER ,
+	name TEXT NOT NULL ,
+	guntype_id INTEGER ,
+	level INTEGER DEFAULT 1,
+	rarity TEXT NOT NULL ,
+	hp INTEGER ,
+	atk INTEGER , 
+	def INTEGER ,
+	
+	PRIMARY KEY (card_id )
+	CONSTRAINT FK_Class FOREIGN Key(guntype_id)REFERENCES gun_type(guntype_id)
+	
+);
+INSERT INTO card (name, guntype_id, rarity, hp, atk, def ) VALUES
+('Helm', 1, 'SSR', 5800, 255, 35),
+('Privaty', 2, 'SSR', 5800, 240, 41),
+('Rapunzel', 3, 'SSR', 6474, 213, 44),
+('Rapi', 2, 'SR', 2528, 129, 21),
+('Neon', 4, 'SR', 2800, 108, 35),
+('Volume', 5, 'SSR', 5837, 250, 36),
+('Product', 1, 'R', 834, 29, 4),
+('Soldier EG', 2, 'R', 750, 34, 5);
+/*-------------------------------------------------------*/
+
+CREATE TABLE inventory(
+	player_id INTEGER,
+	item_id INTEGER ,
+	
+	CONSTRAINT FK_Class FOREIGN Key(player_id)REFERENCES player(player_id)
+	CONSTRAINT FK_Class FOREIGN Key(item_id)REFERENCES item(item_id)
+	
+);
+/*-------------------------------------------------------------*/
+
+CREATE TABLE deck (
+	player_id INTEGER ,
+	card_id INTEGER ,
+	level INTEGER DEFAULT 1,
+	hp INTEGER ,
+	atk INTEGER , 
+	def INTEGER ,
+	
+	CONSTRAINT FK_Class FOREIGN Key(player_id)REFERENCES player(player_id)
+	CONSTRAINT FK_Class FOREIGN Key(card_id)REFERENCES card(card_id)
+
+);
+/*-------------------------------------------------------------*/
+
+CREATE TABLE mail(
+	mail_id INTEGER,
+	player_id INTEGER,
+	title TEXT NOT NULL,
+	reward TEXT NOT NULL,
+	item_id INTEGER,
+	
+	PRIMARY KEY (mail_id)
+	
+	CONSTRAINT FK_Class FOREIGN Key(player_id)REFERENCES player(player_id)
+	CONSTRAINT FK_Class FOREIGN Key(item_id)REFERENCES item(item_id)
+	
+);
+/*------------------------------------------------*/
+
+CREATE TABLE shop (
+	item_id INTEGER,
+	item_name TEXT NOT NULL,
+	silver INTEGER,
+	gold INTEGER,
+	diamond INTEGER,
+	
+	CONSTRAINT FK_Class FOREIGN Key(item_id)REFERENCES item(item_id)
+);
+INSERT INTO shop (item_id, item_name, silver, gold, diamond) VALUES
+(1,'Lootbox ', 0, 0, 300),
+(2,'FlashdriveX100',0, 100, 0),
+(3,'Pack SilverX200', 0, 0, 200),
+(4,'Pack GoldX50', 0, 0, 200);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
