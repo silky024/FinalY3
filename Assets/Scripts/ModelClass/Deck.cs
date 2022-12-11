@@ -27,24 +27,52 @@ public class Deck : MonoBehaviour
     {
         return this.player_id;
     }
+    public void setPlayerID(int player_id)
+    {
+        this.player_id = player_id;
+    }
     public int getCardID()
     {
         return this.card_id;
     }
+    public void setCardID(int card_id)
+    {
+        this.card_id = card_id;
+    }
+
     public int getLevel()
     {
         return this.level;
     }
+    public void setLevel(int level)
+    {
+        this.level = level;
+    }
+
     public int getHp()
     {
         return this.hp;
     }
+    public void setHp(int hp)
+    {
+        this.hp = hp;
+    }
+
     public int getAtk()
     {
         return this.atk;
     }
+    public void setAtk(int atk)
+    {
+        this.atk = atk;
+    }
+
     public int getDef()
     {
         return this.def;
+    }
+    public void setDef(int def)
+    {
+        this.def = def;
     }
 }

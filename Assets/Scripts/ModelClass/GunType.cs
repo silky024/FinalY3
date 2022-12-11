@@ -19,12 +19,24 @@ public class GunType : MonoBehaviour
     {
         return this.guntype_id;
     }
+    public void setGuntype_ID(int guntype_id)
+    {
+        this.guntype_id = guntype_id;
+    }
     public string getName()
     {
         return this.name;
     }
+    public void setName(string name)
+    {
+        this.name = name;
+    }
     public int getReload()
     {
         return this.reload;
+    }
+    public void setreload(int reload)
+    {
+        this.reload = reload;
     }
 }

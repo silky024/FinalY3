@@ -43,7 +43,7 @@ public class Card
         this.name = name;
     }
 
-    public int grtGuntype()
+    public int getGuntype()
     {
         return this.guntype_id;
     }
@@ -61,7 +61,7 @@ public class Card
         this.level = level;
     }
 
-    public string grtRarity()
+    public string getRarity()
     {
         return this.rarity;
     }

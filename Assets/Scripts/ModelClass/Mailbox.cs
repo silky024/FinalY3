@@ -23,20 +23,40 @@ public class Mailbox : MonoBehaviour
     {
         return this.mail_id;
     }
+    public void setMailID(int mail_id)
+    {
+        this.mail_id = mail_id;
+    }
     public int getPlayerID()
     {
         return this.player_id;
+    }
+    public void setPlayerID(int player_id)
+    {
+        this.player_id = player_id;
     }
     public string getTitle()
     {
         return this.title;
     }
+    public void setTitle(string title)
+    {
+        this.title = title;
+    }
     public string getReward()
     {
         return this.reward;
     }
+    public void setReward(string reward)
+    {
+        this.reward = reward;
+    }
     public int getItemID()
     {
         return this.item_id;
+    }
+    public void setItemID(int item_id)
+    {
+        this.item_id = item_id;
     }
 }

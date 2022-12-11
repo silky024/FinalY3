@@ -63,6 +63,7 @@ INSERT INTO card (name, guntype_id, rarity, hp, atk, def ) VALUES
 CREATE TABLE inventory(
 	player_id INTEGER,
 	item_id INTEGER ,
+	amount INTEGER,
 	
 	CONSTRAINT FK_Class FOREIGN Key(player_id)REFERENCES player(player_id)
 	CONSTRAINT FK_Class FOREIGN Key(item_id)REFERENCES item(item_id)

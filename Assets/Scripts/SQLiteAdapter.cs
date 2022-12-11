@@ -31,7 +31,7 @@ public class SQLiteAdapter //: MonoBehaviour
         this.dbcon.Open();
 
         this.dbcommd = this.dbcon.CreateCommand();
-        Debug.Log(connectionString);
+        //Debug.Log(connectionString);
     }
 
     public void disconnectDatabase()
@@ -64,29 +64,55 @@ public class SQLiteAdapter //: MonoBehaviour
         return query(sql);
     }
 
-    /*public IDataReader insert(string table = "", string columes = "*")
+    public IDataReader insertDeck(int player_id, int card_id, int level, int hp, int atk, int def )
     {
-        string sql = "SELECT " + columes + " FROM " + table;
+        string sql = "INSERT INTO deck (player_id, card, level, hp, atk, def) VALUES (" + player_id +"," + card_id +"," + level +","+ hp +"," + atk + ","+ def + ")";
+        return query(sql);
+    }
+
+    public IDataReader insertItem(int item_id, string name)
+    {
+        string sql = "INSERT INTO item (item_id,name) VALUES (" + item_id + ",'" + name + "')";
+        return query(sql);
+    }
+    public IDataReader insertInvenItem(int player_id, int item_id, int amount) //from mail to inven
+    {
+        string sql = "INSERT INTO inventory (player_id,item_id,amount) VALUES ("+player_id+"," + item_id + "," + amount + ")";
+        return query(sql);
+    }
+    public IDataReader insertItemfromShop(int player_id, int item_id, int amount) //from shop to inven
+    {
+        string sql = "INSERT INTO inventory ( player_id, item_id, amount) VALUES (" + player_id + "," + item_id + "," + amount + ")";
         return query(sql);
     }
 
 
-
-
-
-
-
-    void insertnewPlayer()
+    public IDataReader updatePlayerSilver(int silver)
     {
+        string sql = "UPDATE player SET silver = " + silver + " WHERE player_id = 1";
+        return query(sql);
+    }
+    public IDataReader updatePlayerGold(int gold)
+    {
+        string sql = "UPDATE player SET gold = " + gold + " WHERE player_id = 1";
+        return query(sql);
+    }
+    public IDataReader updatePlayerDiamond(int diamond)
+    {
+        string sql = "UPDATE player SET diamond = " + diamond + " WHERE player_id = 1";
+        return query(sql);
+    }
+    public IDataReader updateLootboxamount(int amount)
+    {
+        string sql = "UPDATE inventory SET amount = " + amount + " WHERE player_id = 1, item_id = 1";
+        return query(sql);
+    }
+    public IDataReader updateLootboxflasdriveamount(int amount)
+    {
+        string sql = "UPDATE inventory SET amount = " + amount + " WHERE player_id = 1, item_id = 2";
+        return query(sql);
+    }
 
-
-    string sql = "INSERT INTO () VALUES" + "(+ player_id + ",'" + username + "') ;" ;  
-    
-    IDataReader reader = query(sql);
-
-    }*/
-      
-    
 
     // Start is called before the first frame update
     void Start()
