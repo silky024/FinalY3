@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck 
-{
+public class PlayerCard
+{ 
     protected int player_id;
     protected int card_id;
     protected int level;
@@ -11,7 +11,7 @@ public class Deck
     protected int atk;
     protected int def;
 
-    public Deck (int player_id, int card_id, int level, int hp, int atk, int def)
+    public PlayerCard(int player_id, int card_id, int level, int hp, int atk, int def)
     {
         this.player_id = player_id;
         this.card_id = card_id;
@@ -20,9 +20,9 @@ public class Deck
         this.atk = atk;
         this.def = def;
     }
-    
-    
-    
+
+
+
     public int getPlayerID()
     {
         return this.player_id;

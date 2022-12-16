@@ -66,7 +66,7 @@ public class SQLiteAdapter //: MonoBehaviour
 
     public IDataReader insertDeck(int player_id, int card_id, int level, int hp, int atk, int def )
     {
-        string sql = "INSERT INTO deck (player_id, card, level, hp, atk, def) VALUES (" + player_id +"," + card_id +"," + level +","+ hp +"," + atk + ","+ def + ")";
+        string sql = "INSERT INTO deck (player_id, card_id, level, hp, atk, def) VALUES (" + player_id +"," + card_id +"," + level +","+ hp +"," + atk + ","+ def + ")";
         return query(sql);
     }
 

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Startgame : MonoBehaviour
+
+public class Mail : MonoBehaviour
 {
-    public void StartButton()
+    public void ToMail()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(7);
     }
 }

@@ -7,6 +7,6 @@ public class BacktoStart : MonoBehaviour
 {
     public void BackStart()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
 }

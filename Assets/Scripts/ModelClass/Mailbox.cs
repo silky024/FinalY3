@@ -10,13 +10,13 @@ public class Mailbox : MonoBehaviour
     protected string reward;
     protected int item_id;
 
-    public Mailbox(int mail_id, int player_id, string title, string reward, int item_id)
+    public Mailbox(int mail_id, int player_id, string title, string reward )
     {
         this.mail_id = mail_id;
         this.player_id = player_id;
         this.title = title;
         this.reward = reward;
-        this.item_id = item_id;
+        //this.item_id = item_id;
     }
 
     public int getMailID()
@@ -51,12 +51,12 @@ public class Mailbox : MonoBehaviour
     {
         this.reward = reward;
     }
-    public int getItemID()
+    /*public int getItemID()
     {
         return this.item_id;
     }
     public void setItemID(int item_id)
     {
         this.item_id = item_id;
-    }
+    }*/
 }

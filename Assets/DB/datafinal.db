@@ -8,6 +8,8 @@ CREATE TABLE player (
 	
 	PRIMARY KEY (player_id )
 );
+INSERT INTO player (player_id, username ) VALUES
+(1, 'Yuki');
 /*------------------------------------------------*/
 CREATE TABLE gun_type (
 	guntype_id INTEGER,
@@ -90,14 +92,19 @@ CREATE TABLE mail(
 	player_id INTEGER,
 	title TEXT NOT NULL,
 	reward TEXT NOT NULL,
-	item_id INTEGER,
+	/*item_id INTEGER,*/
 	
 	PRIMARY KEY (mail_id)
 	
 	CONSTRAINT FK_Class FOREIGN Key(player_id)REFERENCES player(player_id)
-	CONSTRAINT FK_Class FOREIGN Key(item_id)REFERENCES item(item_id)
+	/*CONSTRAINT FK_Class FOREIGN Key(item_id)REFERENCES item(item_id)*/
 	
 );
+INSERT INTO mail (mail_id, player_id, title, reward ) VALUES
+(1, 1, 'Welcome new player', 'Lootbox'),
+(2, 1, 'Pocket gift reward', 'Silver'),
+(3, 1, 'Pocket gift reward', 'Diamond');
+
 /*------------------------------------------------*/
 
 CREATE TABLE shop (

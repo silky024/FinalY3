@@ -8,6 +8,6 @@ public class HomeButton : MonoBehaviour
 {
     public void BackHome()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }

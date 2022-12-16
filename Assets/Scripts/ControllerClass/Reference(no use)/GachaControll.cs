@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class GachaControll : MonoBehaviour
 {
-    public string DBFileName = "";
+  /*  public string DBFileName = "";
     public string DBFolder = "DB";
 
     List<Card> cards = new List<Card>();
@@ -94,7 +94,7 @@ public class GachaControll : MonoBehaviour
         /*foreach (var item in Card)
         {
             Debug.Log(item.getName());
-        }*/
+        }
     }
 
     public void onLoadfromDatabase()
@@ -166,7 +166,7 @@ public class GachaControll : MonoBehaviour
         onLoadPlayerfromDatabase();
 
 
-    }
+    }*/
 
 
 
